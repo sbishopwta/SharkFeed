@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,12 +20,46 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="KJ0-0n-gc3">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SharkFeed Logo" translatesAutoresizingMaskIntoConstraints="NO" id="uWb-uA-LeG">
+                                <rect key="frame" x="93.5" y="125" width="187" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="187" id="Zof-vp-qYP"/>
+                                    <constraint firstAttribute="height" constant="187" id="wYW-W5-x5D"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SharkFeed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="we6-tA-aZJ">
+                                <rect key="frame" x="15" y="312" width="345" height="45.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KJ0-0n-gc3" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8mg-1Y-MKl"/>
+                            <constraint firstAttribute="trailing" secondItem="we6-tA-aZJ" secondAttribute="trailing" constant="15" id="FtS-sG-wz0"/>
+                            <constraint firstAttribute="trailing" secondItem="KJ0-0n-gc3" secondAttribute="trailing" id="Kox-yS-dA9"/>
+                            <constraint firstItem="we6-tA-aZJ" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="15" id="Ltq-pO-L16"/>
+                            <constraint firstItem="KJ0-0n-gc3" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Wec-WL-asH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="KJ0-0n-gc3" secondAttribute="bottom" id="dVB-PF-x0V"/>
+                            <constraint firstItem="uWb-uA-LeG" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dtH-Ln-Bn5"/>
+                            <constraint firstItem="uWb-uA-LeG" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="125" id="eQC-2H-zW0"/>
+                            <constraint firstItem="we6-tA-aZJ" firstAttribute="top" secondItem="uWb-uA-LeG" secondAttribute="bottom" id="er3-M0-LBZ"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background" width="414" height="736"/>
+        <image name="SharkFeed Logo" width="181" height="85"/>
+    </resources>
 </document>

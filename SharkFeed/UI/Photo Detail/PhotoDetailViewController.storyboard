@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="uJI-n6-G9M">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="9aE-0S-yFj">
+            <objects>
+                <viewController id="uJI-n6-G9M" customClass="PhotoDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UjH-Jg-mwZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="eYC-KB-Ofi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TqP-u1-sgP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fbn-M8-OoJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="582"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPr-Ry-dwH">
+                                <rect key="frame" x="0.0" y="582" width="375" height="85"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="rHp-Hp-9jK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oPr-Ry-dwH" firstAttribute="leading" secondItem="TqP-u1-sgP" secondAttribute="leading" id="4pf-AB-smr"/>
+                            <constraint firstAttribute="trailing" secondItem="oPr-Ry-dwH" secondAttribute="trailing" id="GKJ-hZ-UZu"/>
+                            <constraint firstItem="oPr-Ry-dwH" firstAttribute="top" secondItem="Fbn-M8-OoJ" secondAttribute="bottom" id="WpD-12-Rly"/>
+                            <constraint firstItem="Fbn-M8-OoJ" firstAttribute="top" secondItem="TqP-u1-sgP" secondAttribute="top" id="cfj-L0-BeW"/>
+                            <constraint firstAttribute="trailing" secondItem="Fbn-M8-OoJ" secondAttribute="trailing" id="dy8-e3-Hrr"/>
+                            <constraint firstItem="Fbn-M8-OoJ" firstAttribute="leading" secondItem="TqP-u1-sgP" secondAttribute="leading" id="j2K-7v-25b"/>
+                            <constraint firstItem="eYC-KB-Ofi" firstAttribute="top" secondItem="oPr-Ry-dwH" secondAttribute="bottom" id="qjS-2i-trK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Fbn-M8-OoJ" id="KaJ-hR-bFt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2MG-Iw-STZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="156.97151424287858"/>
+        </scene>
+    </scenes>
+</document>
