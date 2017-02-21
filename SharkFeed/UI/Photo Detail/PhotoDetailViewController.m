@@ -35,6 +35,7 @@
 - (void)setup {
     self.title = self.photo.title;
     UIImage *placeholderImage = [[CacheHelper sharedInstance] imageForKey:self.photo.thumbnailUrl.absoluteString];
+    //TODO: Have fallbackack images incase fullsize image is nil
     [self.imageView setImageWithURL:self.photo.url placeholderImage:placeholderImage];
 }
 

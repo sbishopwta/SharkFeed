@@ -16,4 +16,5 @@
 @property (copy, nonatomic) NSString *owner;
 
 - (instancetype)initWithJSON:(NSDictionary *)photoJSON;
+
 @end
