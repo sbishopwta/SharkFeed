@@ -8,20 +8,18 @@
 
 #import "CacheHelper.h"
 
-@interface CacheHelper () <NSURLSessionDelegate>
-
+@interface CacheHelper ()
 @property (nonatomic, strong) NSCache *imageCache;
 
 @end
-
 
 @implementation CacheHelper
 
 + (instancetype)sharedInstance {
     static dispatch_once_t once;
-    static CacheHelper* sharedInstance;
+    static CacheHelper *sharedInstance;
     dispatch_once(&once, ^{
-        sharedInstance = [[self alloc] init];
+        sharedInstance = [self new];
         sharedInstance.imageCache = [NSCache new];
     });
     
@@ -42,9 +40,7 @@
     if (cachedImage) {
         success(cachedImage);
     } else {
-        NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfiguration delegate:self delegateQueue:Nil];
-        task = [session dataTaskWithURL:[NSURL URLWithString:urlString]
+        task = [[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:urlString]
                       completionHandler:^(NSData *_Nullable data, NSURLResponse *_Nullable response, NSError *_Nullable error) {
                           if (!error && data) {
                               UIImage *image = [UIImage imageWithData:data];
@@ -60,15 +56,6 @@
     }
     
     return task;
-}
-
-- (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler {
-    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
-        if ([challenge.protectionSpace.host isEqualToString:@"secureqa.choicehotels.com"]) {
-            NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
-        }
-    }
 }
 
 @end

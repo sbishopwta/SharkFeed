@@ -22,6 +22,8 @@
 		FDC7D9AD1E5A1E1E006DE34F /* PhotoDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDC7D9AC1E5A1E1E006DE34F /* PhotoDetailViewController.storyboard */; };
 		FDC7D9B31E5A2415006DE34F /* UIImageView+ImageCaching.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7D9B21E5A2415006DE34F /* UIImageView+ImageCaching.m */; };
 		FDC7D9B61E5A24F4006DE34F /* CacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7D9B51E5A24F4006DE34F /* CacheHelper.m */; };
+		FDC7D9BA1E5B8050006DE34F /* LoadingFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDC7D9B91E5B8050006DE34F /* LoadingFooterView.m */; };
+		FDC7D9BC1E5B8183006DE34F /* LoadingFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FDC7D9BB1E5B8183006DE34F /* LoadingFooterView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,9 @@
 		FDC7D9B21E5A2415006DE34F /* UIImageView+ImageCaching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+ImageCaching.m"; path = "Categories/UIImageView+ImageCaching.m"; sourceTree = "<group>"; };
 		FDC7D9B41E5A24F4006DE34F /* CacheHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CacheHelper.h; path = Utility/CacheHelper.h; sourceTree = "<group>"; };
 		FDC7D9B51E5A24F4006DE34F /* CacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CacheHelper.m; path = Utility/CacheHelper.m; sourceTree = "<group>"; };
+		FDC7D9B81E5B8050006DE34F /* LoadingFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoadingFooterView.h; path = "UI/Photos Grid/Footer View/LoadingFooterView.h"; sourceTree = "<group>"; };
+		FDC7D9B91E5B8050006DE34F /* LoadingFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoadingFooterView.m; path = "UI/Photos Grid/Footer View/LoadingFooterView.m"; sourceTree = "<group>"; };
+		FDC7D9BB1E5B8183006DE34F /* LoadingFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingFooterView.xib; path = "UI/Photos Grid/Footer View/LoadingFooterView.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +154,7 @@
 		FDC7D9A61E59278B006DE34F /* Photos Grid */ = {
 			isa = PBXGroup;
 			children = (
+				FDC7D9B71E5B5709006DE34F /* Footer View */,
 				FDC7D9A81E592AD2006DE34F /* Cells */,
 				FDC7D9921E58EABA006DE34F /* GridCollectionViewController.h */,
 				FDC7D9931E58EABA006DE34F /* GridCollectionViewController.m */,
@@ -174,6 +180,16 @@
 				FDC7D99B1E58F00F006DE34F /* PhotoCollectionViewCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		FDC7D9B71E5B5709006DE34F /* Footer View */ = {
+			isa = PBXGroup;
+			children = (
+				FDC7D9B81E5B8050006DE34F /* LoadingFooterView.h */,
+				FDC7D9B91E5B8050006DE34F /* LoadingFooterView.m */,
+				FDC7D9BB1E5B8183006DE34F /* LoadingFooterView.xib */,
+			);
+			name = "Footer View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +223,7 @@
 				TargetAttributes = {
 					FDC7D9761E58EA04006DE34F = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = QGTZB9G6D4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -236,6 +253,7 @@
 			files = (
 				FDC7D9AD1E5A1E1E006DE34F /* PhotoDetailViewController.storyboard in Resources */,
 				FDC7D98A1E58EA05006DE34F /* LaunchScreen.storyboard in Resources */,
+				FDC7D9BC1E5B8183006DE34F /* LoadingFooterView.xib in Resources */,
 				FDC7D99D1E58F00F006DE34F /* PhotoCollectionViewCell.xib in Resources */,
 				FDC7D9871E58EA05006DE34F /* Assets.xcassets in Resources */,
 				FDC7D9851E58EA04006DE34F /* Main.storyboard in Resources */,
@@ -253,6 +271,7 @@
 				FDC7D9A51E592428006DE34F /* Photo.m in Sources */,
 				FDC7D97F1E58EA04006DE34F /* AppDelegate.m in Sources */,
 				FDC7D9B31E5A2415006DE34F /* UIImageView+ImageCaching.m in Sources */,
+				FDC7D9BA1E5B8050006DE34F /* LoadingFooterView.m in Sources */,
 				FDC7D9AB1E592F24006DE34F /* PhotoDetailViewController.m in Sources */,
 				FDC7D9941E58EABA006DE34F /* GridCollectionViewController.m in Sources */,
 				FDC7D9A11E58F143006DE34F /* UIView+ReusableIdentifier.m in Sources */,
@@ -378,6 +397,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QGTZB9G6D4;
 				INFOPLIST_FILE = SharkFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -390,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QGTZB9G6D4;
 				INFOPLIST_FILE = SharkFeed/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -417,6 +438,7 @@
 				FDC7D9901E58EA05006DE34F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

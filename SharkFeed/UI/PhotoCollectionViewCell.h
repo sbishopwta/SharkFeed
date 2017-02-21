@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @interface PhotoCollectionViewCell : UICollectionViewCell
-
-- (void)configureWithIndexPath:(NSIndexPath *)indexPath;
+- (void)configureWithPhoto:(Photo *)photo;
 
 @end

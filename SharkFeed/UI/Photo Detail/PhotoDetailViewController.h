@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Photo.h"
 
 @interface PhotoDetailViewController : UIViewController
-+ (instancetype)build;
++ (instancetype)buildWithPhoto:(Photo *)photo;
 
 @end

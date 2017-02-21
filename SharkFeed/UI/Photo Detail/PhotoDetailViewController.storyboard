@@ -20,14 +20,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fbn-M8-OoJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fbn-M8-OoJ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="582"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPr-Ry-dwH">
                                 <rect key="frame" x="0.0" y="582" width="375" height="85"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLj-pt-Qoh">
+                                        <rect key="frame" x="0.0" y="28" width="187.5" height="29"/>
+                                        <state key="normal" title="Save to Camera Roll" image="Download"/>
+                                        <connections>
+                                            <action selector="saveToCameraRollButtonTapped:" destination="uJI-n6-G9M" eventType="touchUpInside" id="GK6-Sd-yIR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-pB-h8k">
+                                        <rect key="frame" x="187.5" y="29.5" width="187.5" height="26"/>
+                                        <state key="normal" title="Show in Flickr" image="Open_in_flickr"/>
+                                        <connections>
+                                            <action selector="showInFlickrButtonTapped:" destination="uJI-n6-G9M" eventType="touchUpInside" id="0wm-HB-nPZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
+                                    <constraint firstItem="TLj-pt-Qoh" firstAttribute="centerY" secondItem="oPr-Ry-dwH" secondAttribute="centerY" id="AP6-FI-HmB"/>
+                                    <constraint firstItem="O5c-pB-h8k" firstAttribute="centerY" secondItem="oPr-Ry-dwH" secondAttribute="centerY" id="VQc-Xd-ZL1"/>
+                                    <constraint firstItem="TLj-pt-Qoh" firstAttribute="leading" secondItem="oPr-Ry-dwH" secondAttribute="leading" id="YYM-MG-rcg"/>
+                                    <constraint firstItem="O5c-pB-h8k" firstAttribute="leading" secondItem="TLj-pt-Qoh" secondAttribute="trailing" id="k1U-f0-3aw"/>
                                     <constraint firstAttribute="height" constant="85" id="rHp-Hp-9jK"/>
+                                    <constraint firstItem="TLj-pt-Qoh" firstAttribute="width" secondItem="O5c-pB-h8k" secondAttribute="width" id="txh-cH-DUu"/>
+                                    <constraint firstAttribute="trailing" secondItem="O5c-pB-h8k" secondAttribute="trailing" id="yWP-ua-Fat"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -51,4 +72,8 @@
             <point key="canvasLocation" x="96.799999999999997" y="156.97151424287858"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Download" width="25" height="29"/>
+        <image name="Open_in_flickr" width="27" height="26"/>
+    </resources>
 </document>

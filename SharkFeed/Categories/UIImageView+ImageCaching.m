@@ -47,7 +47,7 @@
     } else {
         self.image = placeholderImage;
         
-        __weak typeof(self) welf = self;
+        __weak typeof(self) weakSelf = self;
         self.imageDataTask = [self.imageDataSession dataTaskWithURL:url
                                                   completionHandler:^(NSData *_Nullable data, NSURLResponse *_Nullable response, NSError *_Nullable error) {
                                                       if (!error && data) {
@@ -55,8 +55,8 @@
                                                           if (image) {
                                                               [[CacheHelper sharedInstance] cacheImage:image forKey:[url absoluteString]];
                                                               dispatch_async(dispatch_get_main_queue(), ^{
-                                                                  [UIView transitionWithView:welf duration:0.25 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-                                                                      welf.image = image;
+                                                                  [UIView transitionWithView:weakSelf duration:0.25 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+                                                                      weakSelf.image = image;
                                                                   } completion:nil];
                                                               });
                                                           }

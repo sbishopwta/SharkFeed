@@ -7,10 +7,10 @@
 //
 
 #import "PhotoCollectionViewCell.h"
+#import "UIImageView+ImageCaching.h"
 
 @interface PhotoCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UILabel *numberLabel;
 
 @end
 
@@ -20,15 +20,14 @@
 
 - (void)prepareForReuse {
     [super prepareForReuse];
-    self.numberLabel.text = nil;
+    self.imageView.image = nil;
 }
 
 #pragma mark - Public
 
-- (void)configureWithIndexPath:(NSIndexPath *)indexPath {
-    NSString *numberString = [NSString stringWithFormat:@"%ld", (long)indexPath.row];
-    self.numberLabel.text = numberString;
+- (void)configureWithPhoto:(Photo *)photo {
+    UIImage *placeholderImage = [UIImage imageNamed:@"Pull to refresh"];
+    [self.imageView setImageWithURL:photo.thumbnailUrl placeholderImage:placeholderImage];
 }
-
 
 @end
