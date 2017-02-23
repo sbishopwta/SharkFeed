@@ -19,6 +19,7 @@
 @property (nonatomic, strong) UIRefreshControl *pullToRefreshControl;
 @property (nonatomic, strong) NSMutableArray <Photo *> *datasource;
 @property (nonatomic) NSInteger offset;
+@property (nonatomic) BOOL isLoading;
 @end
 
 @implementation GridCollectionViewController
@@ -75,10 +76,11 @@ static NSInteger const PhotoBatchSize = 25;
     __weak typeof(self) weakSelf = self;
     [FlickrAPI fetchSharkImagesWithOffset:self.offset batchSize:PhotoBatchSize success:^(NSArray<Photo *> *photos) {
         weakSelf.offset++;
-        [weakSelf.datasource addObjectsFromArray:photos];
         dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf.datasource addObjectsFromArray:photos];
             [weakSelf.collectionView reloadData];
             [weakSelf.pullToRefreshControl endRefreshing];
+            weakSelf.isLoading = NO;
         });
     }];
 }
@@ -106,7 +108,8 @@ static NSInteger const PhotoBatchSize = 25;
 
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
     NSInteger numberOfImages = self.datasource.count;
-    if (indexPath.item == numberOfImages - 1 && numberOfImages >= PhotoBatchSize) {
+    if (indexPath.item == numberOfImages - 1 && numberOfImages >= PhotoBatchSize && self.isLoading == NO) {
+        self.isLoading = YES;
         [self fetchImages];
     }
 }
@@ -120,3 +123,4 @@ static NSInteger const PhotoBatchSize = 25;
 }
 
 @end
+

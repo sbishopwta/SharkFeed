@@ -10,10 +10,6 @@
 #import "CacheHelper.h"
 #import <objc/runtime.h>
 
-@interface UIImageView (_ImageCaching)
-@property (nonatomic, strong) NSURLSessionDataTask *dataTask;
-@end
-
 @implementation UIImageView (ImageCaching)
 
 - (NSURLSession *)imageDataSession {
